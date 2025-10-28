@@ -14,13 +14,17 @@ body {
   text-shadow: 2px 2px 4px black;
 }
   
-  
-  .rosco-container {
+
+
+
+.rosco-container {
     position: relative;
-    width: 500px;
-    height: 500px;
+    width: 90%;       /* antes era 500px */
+    max-width: 500px; /* no se hace más grande que antes */
+    height: 90vw;     /* mantiene proporción en móviles */
+    max-height: 500px;
     margin: 20px;
-  }
+}
   
   .letter {
     position: absolute;
@@ -91,7 +95,7 @@ body {
   }
   .polaroid {
     position: fixed;
-    width: 290px;
+   
     background: white;
     padding: 10px;
     border-radius: 10px;
@@ -100,6 +104,8 @@ body {
     font-family: 'Comic Sans MS', sans-serif;
     transition: transform 0.3s;
     z-index: 2;
+    width: 80%;       /* antes era 290px */
+    max-width: 290px; 
   }
   
   .polaroid img {
@@ -145,4 +151,56 @@ body {
 .polaroid:hover {
     transform: translateY(-50%) rotate(0deg) scale(1.05);
   }
+
+/* Para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+
+    body {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    .letter {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+
+    .center-info {
+        width: 180px;
+    }
+
+    #respuesta {
+        font-size: 14px;
+    }
+
+    button {
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+
+    .polaroid {
+        width: 90%;
+        left: 50% !important;
+        transform: translateX(-50%) rotate(0deg) !important;
+        margin-bottom: 20px;
+    }
+
+    .arriba.izquierda,
+    .abajo.izquierda,
+    .arriba.derecha,
+    .abajo.derecha {
+        top: auto;
+        bottom: auto;
+        left: auto;
+        right: auto;
+        transform: rotate(0deg);
+        margin: 10px auto;
+        position: relative;
+    }
+}
+
   
