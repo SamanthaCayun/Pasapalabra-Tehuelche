@@ -1,163 +1,152 @@
-/* ===== Estilos base ===== */
 body {
-  font-family: 'Comic Sans MS', sans-serif;
-  background: linear-gradient(to right, #fff675, #0401a78f);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 0;
-  padding: 20px;
-  box-sizing: border-box;
-}
-
-/* Título */
-h1 {
-  margin-top: 20px;
+    font-family: 'Comic Sans MS', sans-serif;
+    background: linear-gradient(to right, #fff675, #0401a78f);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 20px;
+  }
+  
+  h1 {
+    margin-top: 20px;
   color: #ffdd57;
   text-shadow: 2px 2px 4px black;
-  text-align: center;
 }
-
-/* ===== Rosco ===== */
-.rosco-container {
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  width: 90%;
-  max-width: 500px;
-  height: auto;
-  margin: 20px auto;
-}
-
-.letter {
-  width: 7vw;
-  height: 7vw;
-  max-width: 50px;
-  max-height: 50px;
-  border-radius: 50%;
-  background-color: #42a5f5;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  color: white;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  user-select: none;
-  font-size: 1.2rem;
-  box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
-  margin: 5px;
-}
-
-.center-info {
-  text-align: center;
-  width: 90%;
-  max-width: 220px;
-  margin: 10px auto;
-}
-
-#pista {
-  font-size: 16px;
-  font-weight: bold;
-  color: #3e2723;
-  margin-bottom: 10px;
-}
-
-#respuesta {
-  padding: 5px;
-  font-size: 16px;
-  width: 100%;
-}
-
-.buttons {
-  margin-top: 10px;
-}
-
-button {
-  padding: 6px 12px;
-  margin: 5px;
-  font-size: 14px;
-  cursor: pointer;
-  border-radius: 8px;
-  border: none;
-  color: white;
-}
-
-#checkBtn { background-color: #66bb6a; }
-#pasapalabraBtn { background-color: #ff7043; }
-
-#resultado {
-  font-size: 16px;
-  font-weight: bold;
-  margin-top: 10px;
-}
-
-/* ===== Polaroids ===== */
-.polaroid {
-  position: relative;
-  width: 80%;
-  max-width: 290px;
-  background: white;
-  padding: 10px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-  text-align: center;
-  font-family: 'Comic Sans MS', sans-serif;
-  transition: transform 0.3s;
-  margin: 20px auto;
-}
-
-.polaroid img {
-  width: 100%;
-  border-radius: 5px;
-}
-
-.polaroid p {
-  margin-top: 8px;
-  font-size: 14px;
-  color: #333;
-}
-
-.polaroid:hover {
-  transform: scale(1.05);
-}
-
-/* ===== Media Queries (móviles) ===== */
-@media (max-width: 768px) {
-
-  h1 {
-    font-size: 20px;
+  
+  
+  .rosco-container {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    margin: 20px;
   }
-
+  
   .letter {
-    width: 10vw;
-    height: 10vw;
-    font-size: 1rem;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #42a5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    user-select: none;
+    font-size: 18px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
   }
-
+  
   .center-info {
-    width: 95%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 220px;
   }
-
+  
+  #pista {
+    font-size: 16px;
+    font-weight: bold;
+    color: #3e2723;
+    margin-bottom: 10px;
+  }
+  
   #respuesta {
-    font-size: 14px;
+    padding: 5px;
+    font-size: 16px;
+    width: 100%;
   }
-
+  
+  .buttons {
+    margin-top: 10px;
+  }
+  
   button {
-    padding: 5px 10px;
-    font-size: 12px;
+    padding: 6px 12px;
+    margin: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 8px;
+    border: none;
+    color: white;
   }
-
+  
+  #checkBtn {
+    background-color: #66bb6a;
+  }
+  
+  #pasapalabraBtn {
+    background-color: #ff7043;
+  }
+  
+  #resultado {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+  }
   .polaroid {
-    width: 95%;
-    max-width: none;
-    margin: 15px auto;
+    position: fixed;
+    width: 290px;
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    text-align: center;
+    font-family: 'Comic Sans MS', sans-serif;
+    transition: transform 0.3s;
+    z-index: 2;
   }
-
-}
-
+  
+  .polaroid img {
+    width: 100%;
+    border-radius: 5px;
+  }
+  
+  .polaroid p {
+    margin-top: 8px;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  /* Efecto hover */
+  .polaroid:hover {
+    transform: rotate(0deg) scale(1.05);
+  }
+  
+  .arriba.izquierda {
+    top: 10%;
+    left: 40px;
+    transform: rotate(-3deg);
+  }
+  
+  .abajo.izquierda {
+    top: 65%;
+    left: 40px;
+    transform: rotate(4deg);
+  }
+  
+  .arriba.derecha {
+    top: 10%;
+    right: 40px;
+    transform: rotate(2deg);
+  }
+  
+  .abajo.derecha {
+    top: 65%;
+    right: 40px;
+    transform: rotate(-2deg);
+  }
+  /* Efecto al pasar el mouse */
+.polaroid:hover {
+    transform: translateY(-50%) rotate(0deg) scale(1.05);
+  }
+  
 
   
+
 
